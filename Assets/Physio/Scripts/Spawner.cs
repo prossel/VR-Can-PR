@@ -77,4 +77,5 @@ public class Spawner : MonoBehaviour
         // set the next spawn time to the current time plus the spawn delay
         nextSpawnTime = Time.time + spawnDelay + Random.Range(-spawnDelayVariation, spawnDelayVariation);
     }
+
 }
