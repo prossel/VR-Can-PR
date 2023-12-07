@@ -6,16 +6,8 @@ using UnityEngine;
 public class Can : MonoBehaviour
 {
 
-    // the starting position of the can
-    public Vector3 startingPosition;
-
-    // the starting rotation of the can
-    public Quaternion startingRotation;
-
-
     // list of all the cans
     public static List<Can> cans = new List<Can>();
-
     
     private void OnEnable()
     {
@@ -27,20 +19,6 @@ public class Can : MonoBehaviour
     {
         // remove this can from the list
         cans.Remove(this);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // remember the starting position and rotation
-        startingPosition = transform.position;
-        startingRotation = transform.rotation;  
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     // has fallen

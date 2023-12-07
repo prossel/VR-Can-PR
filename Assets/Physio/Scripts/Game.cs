@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    // last fallen cans count
-    int lastFallenCansCount = 0;
-
     // points TMPro text
     public TMPro.TMP_Text pointsText;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // last fallen cans count
+    int lastFallenCansCount = 0;
 
     // Update is called once per frame
     void Update()
@@ -82,13 +75,13 @@ public class Game : MonoBehaviour
 
         // Get the mouse position
         Vector3 mousePosition = Input.mousePosition;
-        Debug.Log("Mouse position: " + mousePosition);
+        //Debug.Log("Mouse position: " + mousePosition);
 
         // Get the screen width and height
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
-        Debug.Log("Screen width: " + screenWidth);
-        Debug.Log("Screen height: " + screenHeight);
+        // Debug.Log("Screen width: " + screenWidth);
+        // Debug.Log("Screen height: " + screenHeight);
     
         // Rotate direction around x axis based on relative mouse position on the screen
         float xRotation =  (mousePosition.y - screenHeight / 2) / screenHeight * -90f;
@@ -96,18 +89,11 @@ public class Game : MonoBehaviour
         float yRotation = (mousePosition.x - screenWidth / 2) / screenWidth * 90f;
         direction = Quaternion.AngleAxis(yRotation, Vector3.up) * direction;
         
-
-        // Normalize the direction
-        direction.Normalize();
-
-        Debug.Log("Direction: " + direction);
+        //Debug.Log("Direction: " + direction);
 
         // Apply a force to the ball
         rb.AddForce(direction * 500f);
 
-
-        // apply a force to the ball
-        //rb.AddForce(Camera.main.transform.forward * 500f);
     }
 
 }

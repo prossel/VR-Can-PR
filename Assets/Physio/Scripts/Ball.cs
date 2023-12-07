@@ -10,18 +10,6 @@ public class Ball : MonoBehaviour
     // list of balls in play
     public static List<Ball> balls = new List<Ball>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 // trigger enter
     void OnTriggerEnter(Collider other)
     {
