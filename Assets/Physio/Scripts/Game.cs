@@ -7,6 +7,10 @@ public class Game : MonoBehaviour
     // last fallen cans count
     int lastFallenCansCount = 0;
 
+    // points TMPro text
+    public TMPro.TMP_Text pointsText;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +48,9 @@ public class Game : MonoBehaviour
         // if fallen cans count has changed
         if (fallenCans != lastFallenCansCount)
         {
+            // Display points
+            pointsText.text = fallenCans + "";
+
             // log the number of fallen cans
             Debug.Log("Fallen cans: " + fallenCans);
 
