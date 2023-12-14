@@ -6,6 +6,9 @@ using UnityEngine;
 public class Can : MonoBehaviour
 {
 
+    // List of Material for the cans
+    public Material[] materials;
+
     // list of all the cans
     public static List<Can> cans = new List<Can>();
     
@@ -13,6 +16,12 @@ public class Can : MonoBehaviour
     {
         // add this can to the list
         cans.Add(this);
+
+        // random rotation on y axis
+        transform.Rotate(0, Random.Range(0, 360), 0);
+
+        // random material
+        GetComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Length)];
     }
 
     private void OnDisable()
