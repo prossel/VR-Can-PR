@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Game : MonoBehaviour
 
     // last fallen cans count
     int lastFallenCansCount = 0;
+
+    
 
     // Update is called once per frame
     void Update()
@@ -94,6 +97,17 @@ public class Game : MonoBehaviour
         // Apply a force to the ball
         rb.AddForce(direction * 500f);
 
+    }
+
+    // All balls are played
+    public static void OnAllBallsPlayed()
+    {
+        // log a message
+        Debug.Log("All balls are played.");
+
+        // Load next scene, loop back to the first scene if the last scene is played
+        int nextSceneIndex = (SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
 }

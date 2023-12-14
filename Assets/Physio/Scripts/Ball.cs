@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
@@ -32,19 +30,14 @@ public class Ball : MonoBehaviour
         // if there are no balls left in play
         if (balls.Count <= 0)
         {
-            // log a message
-            Debug.Log("Game Over!");
-
-            // Reload the scene after 3 seconds
-            Invoke("ReloadScene", 3);
+            // All balls are played after a delay
+            Invoke("AllBallsPlayed", 3);
         }
-
     }
 
     // reload the scene
-    void ReloadScene()
+    void AllBallsPlayed()
     {
-        // reload the scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Game.OnAllBallsPlayed();
     }
 }
