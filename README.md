@@ -1,6 +1,8 @@
-# Virtual Physio PR
+# VR Can PR
 
-This Unity project uses VR to help practice physio exercices.
+This Unity project is a throwing game made for and with students.
+
+Their versions are more finished than this technical example.
 
 HEAD-Genève, Communication Visuelle, cours Applications interactives, novembre 2023.
 
